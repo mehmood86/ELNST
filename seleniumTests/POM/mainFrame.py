@@ -1,6 +1,7 @@
+from turtle import up
 from selenium.webdriver.common.by import By
 from seleniumTests.POM.locators import MainFrameLocators as MFL
-import time
+import time, os
 class MainFrame():
 
     def __init__(self, driver):
@@ -21,7 +22,7 @@ class MainFrame():
 
     def click_export(self):
         self.driver.find_element(By.ID, MFL.export_dropdown_button_id).click()
-        self.driver.find_element(By.XPATH, MFL.export_button_xpath).click() 
+        self.driver.find_element(By.XPATH, MFL.export_button_xpath).click()
 
     def click_export_checkbox(self):
         self.driver.find_element(By.XPATH, MFL.export_checkbox_xpath).click()
@@ -57,7 +58,7 @@ class MainFrame():
         self.driver.find_element(By.ID, MFL.properties_tab_id).click()
 
     def click_properties_molarity_tab(self):
-        self.driver.find_element(By.ID, MFL.properties_molarity_tab_id).click()    
+        self.driver.find_element(By.ID, MFL.properties_molarity_tab_id).click()
 
     def click_spectra_editor_button(self):
         self.driver.find_element(By.CLASS_NAME, MFL.spectra_editor_button_classname).click()
@@ -110,7 +111,7 @@ class MainFrame():
 
     def change_stereo_rel_value(self, value):
         elem = self.driver.find_element(By.XPATH, MFL.stereo_rel_div_xpath).click()
-        elem = self.driver.find_element(By.XPATH, MFL.stereo_rel_xpath + value + '"]').click()    
+        elem = self.driver.find_element(By.XPATH, MFL.stereo_rel_xpath + value + '"]').click()
 
     def save_sample_btn(self):
         elem = self.driver.find_element(By.XPATH, MFL.save_sample_xpath).click()
@@ -140,12 +141,17 @@ class MainFrame():
         return self.driver.find_element(By.XPATH, MFL.sample_density_xpath).get_attribute("value")
 
     def get_molarity(self):
-        return self.driver.find_element(By.XPATH, MFL.sample_molarity_xpath).get_attribute("value")    
+        return self.driver.find_element(By.XPATH, MFL.sample_molarity_xpath).get_attribute("value")
     
-    def sample_analysis_dataset_upload(self):
-        self.driver.find_element(By.XPATH, '//*[@id="editable-analysis-list-body-310"]/div/div/div[5]/div/div[1]/div/button').click()
-        elem = self.driver.find_element(By.CLASS_NAME, 'panel-collapse.collapse')
-        self.driver.execute_script("document.getElementByClassNameId('dt_a_length').getElementsByTagName('option').setAttribute('value', '500')")
-        self.driver.execute("document.getElementClassName('panel-collapse.collapse').setAttribute('class', 'panel-collapse.collapse in'))")
-        
-        
+    def sample_analysis_dataset_upload(self):        
+        elem =self.driver.find_element(By.CSS_SELECTOR, MFL.analyses_tab_collapsible)
+        self.driver.execute_script("arguments[0].setAttribute('class', 'panel-collapse collapse in')",  elem)
+        time.sleep(5)
+        self.driver.find_element(By.XPATH, MFL.upload_btn).click()
+        time.sleep(2)
+        file_input = self.driver.find_element(By.XPATH, MFL.file_input)
+        file_input.send_keys(os.getcwd() + MFL.file_path)
+        time.sleep(2)
+        self.driver.find_element(By.XPATH, MFL.close_dialog).click()
+        time.sleep(2)
+        self.save_sample_btn()

@@ -61,7 +61,12 @@ class MainFrameLocators(object):
     sample_amount_xpath = '//*[@id="SampleDetailsXTab-pane-properties"]/span[1]/div/table/tbody/tr[3]/td/table/tbody/tr/td[2]/div/span/input'
     sample_density_xpath = '//*[@id="tab-density-molarity-pane-density"]/div/span/input'
     sample_molarity_xpath = '//*[@id="tab-density-molarity-pane-molarity"]/div/span/input'
-    properties_molarity_tab_id = '//*[@id="tab-density-molarity-tab-molarity"]'                                  
+    properties_molarity_tab_id = '//*[@id="tab-density-molarity-tab-molarity"]' 
+    analyses_tab_collapsible = '.panel-collapse.collapse'
+    upload_btn = '/html/body/div/div[2]/div/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/span/div/div[1]/div/div/div[2]/div/div/div[5]/div/div/div/button'
+    file_input = '/html/body/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/input'
+    file_path = '/testFiles/demo.svg'
+    close_dialog = '/html/body/div[2]/div[2]/div/div/div[1]/h4/div/button'
     
 class PasswordNewPageLocators(object):
     log_in_link_text = "Log in"

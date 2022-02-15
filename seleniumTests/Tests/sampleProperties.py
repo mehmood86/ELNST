@@ -16,26 +16,25 @@ class LoginTest(unittest.TestCase):
     URL = "http://localhost:4000/home"
 
     @classmethod
-    def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
-        #cls.driver.implicitly_wait(10)
-        cls.driver.maximize_window()
-        cls.driver.get(cls.URL)
-        cls.driver.implicitly_wait(10)
-        top_frame = TopFrame(cls.driver)
+    def setUpClass(self):
+        self.driver = webdriver.Firefox()        
+        self.driver.maximize_window()
+        self.driver.get(self.URL)
+        self.driver.implicitly_wait(10)
+        top_frame = TopFrame(self.driver)
         top_frame.enter_username("test.user@provider.edu")
         top_frame.enter_password("asdasdasd")
         top_frame.click_login()
 
     @classmethod
-    def setUp(cls):
-        home_page = MainFrame(cls.driver)
+    def setUp(self):
+        home_page = MainFrame(self.driver)
         home_page.click_my_data_button()
         home_page.click_sample_link()
     
     def test_0001_Stereo_Abs_values_reflection(self):
         home_page = MainFrame(self.driver)
-        home_page.click_properties_tab()
+        home_page.click_properties_tab() #//*[@id="editable-analysis-list-body-310"]
 
         try:
             home_page.change_stereo_abs_value(str(2))
@@ -105,6 +104,7 @@ class LoginTest(unittest.TestCase):
         home_page = MainFrame(self.driver)
         home_page.click_analyses_tab()
         home_page.sample_analysis_dataset_upload()
+        
 
     @classmethod
     def tearDown(cls):

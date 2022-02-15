@@ -1,6 +1,7 @@
 from turtle import up
 from selenium.webdriver.common.by import By
 from seleniumTests.POM.locators import MainFrameLocators as MFL
+from definitions import FILE_PATH
 import time, os
 class MainFrame():
 
@@ -148,10 +149,14 @@ class MainFrame():
         self.driver.execute_script("arguments[0].setAttribute('class', 'panel-collapse collapse in')",  elem)
         time.sleep(5)
         self.driver.find_element(By.XPATH, MFL.upload_btn).click()
-        time.sleep(2)
+        time.sleep(5)
+
+    def upload_file(self):
         file_input = self.driver.find_element(By.XPATH, MFL.file_input)
-        file_input.send_keys(os.getcwd() + MFL.file_path)
-        time.sleep(2)
-        self.driver.find_element(By.XPATH, MFL.close_dialog).click()
-        time.sleep(2)
-        self.save_sample_btn()
+        file_input.send_keys(FILE_PATH) # read file from testFiles directory
+
+    def close_dialog(self):
+        elem = self.driver.find_element(By.XPATH, MFL.close_dialog)
+        elem.click()        
+        
+        

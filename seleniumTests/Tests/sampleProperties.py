@@ -104,6 +104,12 @@ class LoginTest(unittest.TestCase):
         home_page = MainFrame(self.driver)
         home_page.click_analyses_tab()
         home_page.sample_analysis_dataset_upload()
+        time.sleep(1)
+        home_page.upload_file()
+        time.sleep(1)
+        home_page.close_dialog()
+        time.sleep(1)
+        home_page.save_sample_btn()        
         
 
     @classmethod

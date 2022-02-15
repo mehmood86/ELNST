@@ -65,7 +65,6 @@ class MainFrameLocators(object):
     analyses_tab_collapsible = '.panel-collapse.collapse'
     upload_btn = '/html/body/div/div[2]/div/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/span/div/div[1]/div/div/div[2]/div/div/div[5]/div/div/div/button'
     file_input = '/html/body/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/input'
-    file_path = '/testFiles/demo.svg'
     close_dialog = '/html/body/div[2]/div[2]/div/div/div[1]/h4/div/button'
     
 class PasswordNewPageLocators(object):

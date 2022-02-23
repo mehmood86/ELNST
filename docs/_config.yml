@@ -18,17 +18,19 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Selenium Testcases for Chemotion ELN
+title: ELN functional testing
 email: mehmood.ghaffar@kit.edu
 description: >- # this means to ignore newlines until "baseurl:"
-  
-baseurl: "/docs" # the subpath of your site, e.g. /blog
-url: "https://mehmood86.github.io/ELNST" # the base hostname & protocol for your site, e.g. http://example.com
-twitter_username: jekyllrb
+  This page provides a detailed overview of all available functional tests
+  for running instances of Chemotion ELN. Python and Selenium web automation
+  has been utilized for that purpose. Instructions are also given on how to perform specific test.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: GhaffarMehmood
 github_username:  mehmood86
+theme: "minima"
 
 # Build settings
-theme: jekyll-theme-leap-day
 plugins:
   - jekyll-feed
 

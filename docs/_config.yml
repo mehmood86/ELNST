@@ -24,8 +24,8 @@ description: >- # this means to ignore newlines until "baseurl:"
   This page provides a detailed overview of all available functional tests
   for running instances of Chemotion ELN. Python and Selenium web automation
   has been utilized for that purpose. Instructions are also given on how to perform specific test.
-baseurl: "" # the subpath of your site, e.g. /blog
-url: "" # the base hostname & protocol for your site, e.g. http://example.com
+baseurl: "/ELNST" # the subpath of your site, e.g. /blog
+url: "https://mehmood86.github.io" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: GhaffarMehmood
 github_username:  mehmood86
 theme: "minima"

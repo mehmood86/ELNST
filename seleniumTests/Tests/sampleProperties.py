@@ -1,3 +1,4 @@
+from black import assert_equivalent
 from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 
@@ -32,7 +33,7 @@ class LoginTest(unittest.TestCase):
         home_page.click_my_data_button()
         home_page.click_sample_link()
     
-    def test_0001_Stereo_Abs_values_reflection(self):
+    def test_Stereo_Abs_values_reflection(self):
         home_page = MainFrame(self.driver)
         home_page.click_properties_tab() #//*[@id="editable-analysis-list-body-310"]
 
@@ -57,7 +58,7 @@ class LoginTest(unittest.TestCase):
                 continue
         assert '(S)' in home_page.get_iupac_span()
     
-    def test_0002_Stereo_rel_values_reflection(self):
+    def test_Stereo_rel_values_reflection(self):
         home_page = MainFrame(self.driver)
         home_page.click_properties_tab()
 
@@ -85,7 +86,7 @@ class LoginTest(unittest.TestCase):
                 continue
         assert "p-geminal" in home_page.get_iupac_span()
         
-    def test_003_Change_Density(self):
+    def test_Change_Density(self):
         home_page = MainFrame(self.driver)
         home_page.click_properties_tab()
 
@@ -104,13 +105,30 @@ class LoginTest(unittest.TestCase):
         home_page = MainFrame(self.driver)
         home_page.click_analyses_tab()
         home_page.sample_analysis_dataset_upload()
-        time.sleep(1)
+        time.sleep(4)
+        home_page.sample_analysis_dataset_upload_btn()
         home_page.upload_file()
         time.sleep(1)
         home_page.close_dialog()
         time.sleep(1)
-        home_page.save_sample_btn()        
+        home_page.save_sample_btn()
+
+    def test_update_dataset(self):
+        home_page = MainFrame(self.driver)
+        home_page.click_analyses_tab()
+        home_page.sample_analysis_dataset_upload()
+        try:
+            home_page.get_demo_data()
+            time.sleep(1)
+            home_page.update_demo_data("sample_demo", "sample_instrument", "This is a sample dataset")
+            time.sleep
+            home_page.close_dialog()
+            time.sleep(1)
+            home_page.save_sample_btn()                        
+        except:
+            NoSuchElementException
         
+        assert home_page.get_element("sample_demo").text == "sample_demo"        
 
     @classmethod
     def tearDown(cls):

@@ -147,9 +147,10 @@ class MainFrame():
     def sample_analysis_dataset_upload(self):        
         elem =self.driver.find_element(By.CSS_SELECTOR, MFL.analyses_tab_collapsible)
         self.driver.execute_script("arguments[0].setAttribute('class', 'panel-collapse collapse in')",  elem)
-        time.sleep(5)
-        self.driver.find_element(By.XPATH, MFL.upload_btn).click()
-        time.sleep(5)
+    
+    def sample_analysis_dataset_upload_btn(self):        
+        elem = self.driver.find_element(By.XPATH, MFL.upload_btn)
+        elem.click()        
 
     def upload_file(self):
         file_input = self.driver.find_element(By.XPATH, MFL.file_input)
@@ -157,6 +158,21 @@ class MainFrame():
 
     def close_dialog(self):
         elem = self.driver.find_element(By.XPATH, MFL.close_dialog)
-        elem.click()        
-        
-        
+        elem.click()
+    
+    def get_demo_data(self):        
+        elem = self.driver.find_element(By.LINK_TEXT, 'demo')
+        elem.click()
+
+    def update_demo_data(self, name, instrument, description):
+        elem_name = self.driver.find_element(By.ID, 'datasetName')
+        elem_name.clear()
+        elem_name.send_keys(name)
+        elem_instrument = self.driver.find_element(By.ID, 'datasetInstrument')
+        elem_instrument.clear()
+        elem_instrument.send_keys(instrument)        
+        elem_textArea = self.driver.find_element(By.ID, 'datasetDescription')       
+        elem_textArea.send_keys(description)
+    
+    def get_element(self, element):
+        return self.driver.find_element(By.LINK_TEXT, element)

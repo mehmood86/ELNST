@@ -50,7 +50,7 @@ class MainFrameLocators(object):
     sample_name_label_xpath = '//*[@id="tabList-pane-0"]/div/div[2]/table/tbody[1]/tr[2]/td[2]/span/span[2]'
     sample_boiling_temperature_textbox_xpath = '//*[@id="SampleDetailsXTab-pane-properties"]/span[1]/div/table/tbody/tr[2]/td/div/div[3]/div/span/input'
     sample_melting_temperature_textbox_xpath = '//*[@id="SampleDetailsXTab-pane-properties"]/span[1]/div/table/tbody/tr[2]/td/div/div[4]/div/span/input'
-    
+
     save_sample_xpath = '//*[@id="elements-tabs-pane-0"]/div/div[1]/div/button[2]'
     sample_iupac_xpath = '//*[@id="elements-tabs-pane-0"]/div/div[2]/div[1]/div[1]/h4/div/p[1]/span/span/text()[6]'
     stereo_abs_div_xpath = '//*[@id="react-select-3--value"]/div[1]'
@@ -61,12 +61,12 @@ class MainFrameLocators(object):
     sample_amount_xpath = '//*[@id="SampleDetailsXTab-pane-properties"]/span[1]/div/table/tbody/tr[3]/td/table/tbody/tr/td[2]/div/span/input'
     sample_density_xpath = '//*[@id="tab-density-molarity-pane-density"]/div/span/input'
     sample_molarity_xpath = '//*[@id="tab-density-molarity-pane-molarity"]/div/span/input'
-    properties_molarity_tab_id = '//*[@id="tab-density-molarity-tab-molarity"]' 
+    properties_molarity_tab_id = '//*[@id="tab-density-molarity-tab-molarity"]'
     analyses_tab_collapsible = '.panel-collapse.collapse'
     upload_btn = '/html/body/div/div[2]/div/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/span/div/div[1]/div/div/div[2]/div/div/div[5]/div/div/div/button'
     file_input = '/html/body/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/input'
     close_dialog = '/html/body/div[2]/div[2]/div/div/div[1]/h4/div/button'
-    
+
 class PasswordNewPageLocators(object):
     log_in_link_text = "Log in"
     sign_up_link_text = "Sign up"

@@ -44,7 +44,7 @@ class LoginTest(unittest.TestCase):
         top_frame.enter_username(self.invalid_username)
         top_frame.enter_password(self.invalid_password)
         top_frame.click_login()
-        
+
     def test_0000_about_click(self):
         top_frame = TopFrame(self.driver)
         top_frame.click_about()
@@ -130,7 +130,7 @@ class LoginTest(unittest.TestCase):
         login_page.click_login()
         time.sleep(1)
         top_frame = TopFrame(self.driver)
-        top_frame.click_logout()        
+        top_frame.click_logout()
         assert "Chemotion" in self.driver.title
 
     def test_0011_forgot_password_after_invalid_user(self):

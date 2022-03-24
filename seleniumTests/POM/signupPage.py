@@ -17,7 +17,7 @@ class SignupPage():
         self.driver.find_element(By.ID, SPL.lastname_textbox_id).send_keys(lastname)
         self.driver.find_element(By.ID, SPL.abbreviation_textbox_id).send_keys(abbreviation)
         self.driver.find_element(By.ID, SPL.organization_textbox_id).send_keys(organization)
-    
+
     def click_signup(self):
         self.driver.find_element(By.CLASS_NAME, SPL.signup_button_class_name).click()
         self.driver.implicitly_wait(5)

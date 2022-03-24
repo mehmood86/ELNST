@@ -17,7 +17,7 @@ class LoginPage():
         elem.send_keys(password)
 
     def click_login(self):
-        self.driver.find_element(By.CLASS_NAME, LPL.login_button_class_name).click()        
+        self.driver.find_element(By.CLASS_NAME, LPL.login_button_class_name).click()
 
     def click_sign_up(self):
         self.driver.find_element(By.LINK_TEXT, LPL.sign_up_link_text).click()

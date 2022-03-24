@@ -11,7 +11,7 @@ class MainFrame():
     def click_import(self):
         self.driver.find_element(By.ID, MFL.export_dropdown_button_id).click()
         self.driver.find_element(By.XPATH, MFL.import_button_xpath).click()
-    
+
     def enter_path_import_file_select(self, path):
         self.driver.find_element(By.XPATH, MFL.import_file_select_button_xpath).send_keys(path)
 
@@ -102,7 +102,7 @@ class MainFrame():
 
     def get_melting_temperature(self):
         return self.driver.find_element(By.XPATH, MFL.sample_melting_temperature_textbox_xpath).get_attribute("value")
-    
+
     def get_iupac(self):
         elem = self.driver.find_element(By.XPATH, MFL.sample_iupac_xpath)
 
@@ -116,7 +116,7 @@ class MainFrame():
 
     def save_sample_btn(self):
         elem = self.driver.find_element(By.XPATH, MFL.save_sample_xpath).click()
-    
+
     def get_iupac_span(self):
         return self.driver.find_element(By.XPATH, MFL.iupac_span).text
 
@@ -124,33 +124,33 @@ class MainFrame():
         elem = self.driver.find_element(By.XPATH, MFL.sample_amount_xpath)
         elem.clear()
         elem.send_keys(sample_value)
-    
+
     def get_sample_amount(self):
         return self.driver.find_element(By.XPATH, MFL.sample_amount_xpath).get_attribute("value")
-    
+
     def change_density(self, density_value):
         elem = self.driver.find_element(By.XPATH, MFL.sample_density_xpath)
         elem.clear()
         elem.send_keys(density_value)
-    
+
     def change_molarity(self, molarity_value):
         elem = self.driver.find_element(By.XPATH, MFL.sample_molarity_xpath)
         elem.clear()
         elem.send_keys(molarity_value)
-    
+
     def get_density(self):
         return self.driver.find_element(By.XPATH, MFL.sample_density_xpath).get_attribute("value")
 
     def get_molarity(self):
         return self.driver.find_element(By.XPATH, MFL.sample_molarity_xpath).get_attribute("value")
-    
-    def sample_analysis_dataset_upload(self):        
+
+    def sample_analysis_dataset_upload(self):
         elem =self.driver.find_element(By.CSS_SELECTOR, MFL.analyses_tab_collapsible)
         self.driver.execute_script("arguments[0].setAttribute('class', 'panel-collapse collapse in')",  elem)
-    
-    def sample_analysis_dataset_upload_btn(self):        
+
+    def sample_analysis_dataset_upload_btn(self):
         elem = self.driver.find_element(By.XPATH, MFL.upload_btn)
-        elem.click()        
+        elem.click()
 
     def upload_file(self):
         file_input = self.driver.find_element(By.XPATH, MFL.file_input)
@@ -159,8 +159,8 @@ class MainFrame():
     def close_dialog(self):
         elem = self.driver.find_element(By.XPATH, MFL.close_dialog)
         elem.click()
-    
-    def get_demo_data(self):        
+
+    def get_demo_data(self):
         elem = self.driver.find_element(By.LINK_TEXT, 'demo')
         elem.click()
 
@@ -170,9 +170,9 @@ class MainFrame():
         elem_name.send_keys(name)
         elem_instrument = self.driver.find_element(By.ID, 'datasetInstrument')
         elem_instrument.clear()
-        elem_instrument.send_keys(instrument)        
-        elem_textArea = self.driver.find_element(By.ID, 'datasetDescription')       
+        elem_instrument.send_keys(instrument)
+        elem_textArea = self.driver.find_element(By.ID, 'datasetDescription')
         elem_textArea.send_keys(description)
-    
+
     def get_element(self, element):
         return self.driver.find_element(By.LINK_TEXT, element)

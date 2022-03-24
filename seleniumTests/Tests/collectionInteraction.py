@@ -43,7 +43,7 @@ class LoginTest(unittest.TestCase):
     def test_0002_export_click(self):
         home_page = MainFrame(self.driver)
         home_page.click_export()
-        home_page.click_export_close()       
+        home_page.click_export_close()
 
     def test_0003_export_collection_select_click(self):
         home_page = MainFrame(self.driver)
@@ -62,7 +62,7 @@ class LoginTest(unittest.TestCase):
                 time.sleep(10)
                 self.driver.refresh()
                 home_page.click_export()
-                home_page.click_export_checkbox()    
+                home_page.click_export_checkbox()
         home_page.click_export_export()
         time.sleep(2)
 

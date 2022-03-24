@@ -10,7 +10,7 @@ class PasswordNewPage():
         self.driver.find_element(By.ID, PNPL.email_textbox_id).send_keys(email)
 
     def click_send(self):
-        self.driver.find_element(By.NAME, PNPL.send_button_name).click()        
+        self.driver.find_element(By.NAME, PNPL.send_button_name).click()
 
     def click_sign_up(self):
         self.driver.find_element(By.LINK_TEXT, PNPL.sign_up_link_text).click()

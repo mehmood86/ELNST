@@ -15,7 +15,7 @@ from seleniumTests.POM.userType import UserType
 class LoginTest(unittest.TestCase):
 
     URL = "http://localhost:4000/home"
-    
+
     user = UserType(
         email = "chemotion_user_0001@chemotion.edu",
         password = "20b83105a867b20719e265839351f233",
@@ -23,6 +23,7 @@ class LoginTest(unittest.TestCase):
         lastname = "0001",
         abbreviation = "cu1"
         )
+    admin = UserType()
 
     @classmethod
     def setUpClass(cls):
@@ -34,10 +35,10 @@ class LoginTest(unittest.TestCase):
     def setUp(cls):
         cls.driver.get(cls.URL)
         cls.driver.implicitly_wait(5)
-    
+
     def enter_login_data(self):
         assert "Chemotion" in self.driver.title
-         
+
         top_frame = TopFrame(self.driver)
         top_frame.enter_username(self.user.email)
         top_frame.enter_password(self.user.password)
@@ -46,8 +47,8 @@ class LoginTest(unittest.TestCase):
         assert "Chemotion" in self.driver.title
 
         top_frame = TopFrame(self.driver)
-        top_frame.enter_username(UserType().email)
-        top_frame.enter_password(UserType().password)
+        top_frame.enter_username(self.admin.email)
+        top_frame.enter_password(self.admin.password)
 
     def test_0000_create_new_user(self):
         self.enter_login_data_admin()

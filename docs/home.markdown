@@ -14,10 +14,12 @@ permalink: /home/
 
 <h2>Add Users TestCases</h2>
 |# |name |description |
+|:-----|:----|:------------|
 |1 |Add users |Add multiple users with different credentials|
 
-<h2>User Validation</h2>
+<h2>User Validation TestCases</h2>
 |# |name |description |
+|:-----|:----|:------------|
 |1 |Add new user with validation |Test validation with correct and incorrect credentials |
 
 

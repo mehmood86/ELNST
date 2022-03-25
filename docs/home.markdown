@@ -8,16 +8,24 @@ permalink: /home/
 
 |# |name |description |
 |:-----|:----|:------------|
-|1 |Create new user|Create new user with following default standard credentials|
-|2 |Login validation by return key|Login with newly created user via return key|
-|3 |Login validation by button click|Login with newly created user via button click key|
+|1 |Create new user |Create new user with following default standard credentials|
+|2 |Login validation by return key |Login with newly created user via return key|
+|3 |Login validation by button click |Login with newly created user via button click key|
+
+<h2>Add Users TestCases</h2>
+|# |name |description |
+|1 |Add users |Add multiple users with different credentials|
+
+<h2>User Validation</h2>
+|# |name |description |
+|1 |Add new user with validation |Test validation with correct and incorrect credentials |
 
 
 <h2>TopFrame Interaction TestCases</h2>
 
 |# |name |description |
 |:-----|:----|:------------|
-|1 |About click|Login as person and navigate to ‘About’ page and compare version of ELN with 1.1.0 (current chemotion ELN version is 1.0.3)|
+|1 |About click |Login as person and navigate to ‘About’ page and compare version of ELN with 1.1.0 (current chemotion ELN version is 1.0.3)|
 |2 |Sign up click |Click on ‘sign up’ link and check if the ‘back’ link correctly redirected to home page|
 |3 |Sign up user |Sign up a new User, wait for the page to load completely. Click logout and then click back link to check if session is expired correctly|
 |4 |ELN click |Without login, click on chemotion drop down and then click ELN, it should redirect to chemotion eln home page|

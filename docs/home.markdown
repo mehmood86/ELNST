@@ -22,7 +22,11 @@ permalink: /home/
 
 |# |name |description |
 |:-----|:----|:------------|
-|1 |Add new user with validation |Test validation with correct and incorrect credentials |
+|1 |Test user with incorrect email | Validation check for error messages corresponding to incorrect email address |
+|2 |Test user with incorrect password |Validation check for error messages corresponding to incorrect password |
+|3 |Test user with incorrect first name |Validation check for error messages corresponding to incorrect first name |
+|4 |Test user with incorrect last name |Validation check for error messages corresponding to incorrect last name |
+|5 |Test user with incorrect abbreviation |Validation check for error messages corresponding to incorrect abbreviation |
 
 
 <h2>TopFrame Interaction TestCases</h2>

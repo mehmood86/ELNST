@@ -17,6 +17,8 @@ permalink: /home/
 |# |name |description |
 |:-----|:----|:------------|
 |1 |Add users |Add multiple users with different credentials|
+|2 |Test login with locked account |Lock first user in user management panel and then try to sign in as that user. The account should not be able to login|
+
 
 <h2>User Validation TestCases</h2>
 

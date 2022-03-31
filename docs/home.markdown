@@ -8,17 +8,9 @@ permalink: /home/
 
 |# |name |description |
 |:-----|:----|:------------|
-|1 |Create new user |Create new user with following default standard credentials|
-|2 |Login validation by return key |Login with newly created user via return key|
-|3 |Login validation by button click |Login with newly created user via button click key|
-
-<h2>Add Users TestCases</h2>
-
-|# |name |description |
-|:-----|:----|:------------|
 |1 |Add users |Add multiple users with different credentials|
 |2 |Test login with locked account |Lock first user in user management panel and then try to sign in as that user. The account should not be able to login|
-
+|3 |Test login with unlocked account |unLock fa locked user in user management panel and then try to sign in as that user. The account should now be able to login|
 
 <h2>User Validation TestCases</h2>
 
@@ -29,7 +21,6 @@ permalink: /home/
 |3 |Test user with incorrect first name |Validation check for error messages corresponding to incorrect first name |
 |4 |Test user with incorrect last name |Validation check for error messages corresponding to incorrect last name |
 |5 |Test user with incorrect abbreviation |Validation check for error messages corresponding to incorrect abbreviation |
-
 
 <h2>TopFrame Interaction TestCases</h2>
 

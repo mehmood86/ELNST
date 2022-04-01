@@ -1,5 +1,6 @@
 from selenium.webdriver.common.by import By
 from seleniumTests.POM.locators import AdminPageLocators as APL
+from definitions import USER_FILE_PATH
 
 class AdminPage():
 
@@ -15,9 +16,9 @@ class AdminPage():
         self.driver.find_element(By.ID, APL.abbreviation_textbox_id).send_keys(abbreviation)
 
     def login_with(self, email, password):
-        self.driver.find_element_by_xpath('//*[@id="user_login"]').send_keys(email)
-        self.driver.find_element_by_xpath('//*[@id="user_password"]').send_keys(password)
-        self.driver.find_element_by_xpath('//*[@id="new_user"]/button').click()
+        self.driver.find_element(By.XPATH, APL.login_field).send_keys(email)
+        self.driver.find_element(By.XPATH, APL.password_field).send_keys(password)
+        self.driver.find_element(By.XPATH, APL.login_btn).click()
 
     def click_user_management_link(self):
         self.driver.find_element(By.LINK_TEXT, APL.usermanagement_link_text).click()
@@ -34,11 +35,18 @@ class AdminPage():
     def click_close(self):
         self.driver.find_element(By.CLASS_NAME, APL.close_button_classname).click()
 
+    def click_add_multiple_user_tab(self):
+        self.driver.find_element(By.XPATH, APL.multiple_users_tab).click()
+
     def get_locked_status(self):
-        return self.driver.find_element_by_xpath('//*[@id="AdminHome"]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[2]/button[4]/i').get_attribute("class")
+        return self.driver.find_element(By.XPATH, APL.locked_status).get_attribute("class")
 
     def click_lock(self):
-        self.driver.find_element_by_xpath('//*[@id="AdminHome"]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[2]/button[4]').click()
+        self.driver.find_element(By.XPATH, APL.firt_user_lock).click()
 
     def get_error_msg(self):
-        return self.driver.find_element_by_xpath('/html/body/div/div/div[2]').get_attribute("textContent")
+        return self.driver.find_element(By.XPATH, APL.error_box).get_attribute("textContent")
+
+    def upload_users_file(self):
+        user_file_input = self.driver.find_element(By.XPATH, APL.user_file_input)
+        user_file_input.send_keys(USER_FILE_PATH) # read file from testFiles directory

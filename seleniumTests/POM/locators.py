@@ -14,6 +14,14 @@ class AdminPageLocators(object):
     create_button_old_xpath = "/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]"
     create_button_xpath = '//*[@id="createUserTabs-pane-singleUser"]/form/div[8]/div/button'
     close_button_classname = "close"
+    locked_status = '//*[@id="AdminHome"]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[2]/button[4]/i'
+    firt_user_lock = '//*[@id="AdminHome"]/div/div/div[2]/div[2]/div/div[2]/table/tbody/tr[1]/td[2]/button[4]'
+    multiple_users_tab = '//*[@id="createUserTabs-tab-multiUser"]'
+    user_file_input = '//*[@id="userFileDragAndDrop"]/input'
+    error_box = '/html/body/div/div/div[2]'
+    login_field = '//*[@id="user_login"]'
+    password_field = '//*[@id="user_password"]'
+    login_btn = '//*[@id="new_user"]/button'
 
 class LoginPageLocators(object):
     sign_up_link_text = "Sign up"

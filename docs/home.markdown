@@ -9,8 +9,9 @@ permalink: /home/
 |# |name |description |
 |:-----|:----|:------------|
 |1 |Add users |Add multiple users with different credentials|
-|2 |Test login with locked account |Lock first user in user management panel and then try to sign in as that user. The account should not be able to login|
-|3 |Test login with unlocked account |unLock fa locked user in user management panel and then try to sign in as that user. The account should now be able to login|
+|2 |test_add_multiple_users_from_file |Add multiple users using a csv file|
+|3 |Test login with locked account |Lock first user in user management panel and then try to sign in as that user. The account should not be able to login|
+|4 |Test login with unlocked account |unLock fa locked user in user management panel and then try to sign in as that user. The account should now be able to login|
 
 <h2>User Validation TestCases</h2>
 

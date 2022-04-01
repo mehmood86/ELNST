@@ -59,6 +59,16 @@ class LoginTest(unittest.TestCase):
             time.sleep(1)
         assert "Chemotion" in self.driver.title
 
+    def test_add_multiple_users_from_file(self):
+        admin_page = AdminPage(self.driver)
+        admin_page.click_user_management_link()
+        admin_page.click_add_user_button()
+        admin_page.click_add_multiple_user_tab()
+        admin_page.upload_users_file()
+        time.sleep(5)
+        self.driver.find_element_by_xpath('//*[@id="createUserTabs-pane-multiUser"]/form/div[3]/button').click()
+        assert "Chemotion" in self.driver.title
+
     def test_locked_user_login(self):
         # locked account credentials
         locked="False"
@@ -102,6 +112,7 @@ class LoginTest(unittest.TestCase):
         self.assertIn ("Chemotion", self.driver.title)
         time.sleep(2)
 
+    msg='Row 1: Failed to create user; Validation failed: Email has already been taken, Name abbreviation is already in use..'
 
     def tearDown(self):
         self.driver.close()

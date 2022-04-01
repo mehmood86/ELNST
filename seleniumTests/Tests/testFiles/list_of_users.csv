@@ -1,0 +1,4 @@
+email,password,firstname,lastname,nameabbr,type
+csv_user_1@chemotion.edu,password1,csv_f1,csv_l1,u1,Person
+csv_user_2@chemotion.edu,password2,csv_f2,csv.l2,u2,Person
+csv_user_3@chemotion.edu,password3,csv_f3,csv.l3,u3,Person

@@ -80,8 +80,13 @@ class UserValidation(unittest.TestCase):
             self.invalid_user1.lastname,
             self.invalid_user1.abbreviation)
         time.sleep(1)
-        self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
-        time.sleep(4)
+        try:
+            self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
+            time.sleep(4)
+        except:
+            self.driver.find_element_by_xpath('//*[@id="createUserTabs-pane-singleUser"]/form/div[8]/div/button').click()
+            time.sleep(4)
+
         error_box = self.driver.find_element_by_id('formControlMessage').get_attribute('value')
         self.assertIn ("You have entered an invalid email address!", error_box)
 
@@ -95,8 +100,12 @@ class UserValidation(unittest.TestCase):
             self.invalid_user2.lastname,
             self.invalid_user2.abbreviation)
         time.sleep(1)
-        self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
-        time.sleep(4)
+        try:
+            self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
+            time.sleep(4)
+        except:
+            self.driver.find_element_by_xpath('//*[@id="createUserTabs-pane-singleUser"]/form/div[8]/div/button').click()
+            time.sleep(4)
         error_box = self.driver.find_element_by_id('formControlMessage').get_attribute('value')
         self.assertIn ("Password is too short", error_box)
 
@@ -110,8 +119,12 @@ class UserValidation(unittest.TestCase):
             self.invalid_user3.lastname,
             self.invalid_user3.abbreviation)
         time.sleep(1)
-        self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
-        time.sleep(4)
+        try:
+            self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
+            time.sleep(4)
+        except:
+            self.driver.find_element_by_xpath('//*[@id="createUserTabs-pane-singleUser"]/form/div[8]/div/button').click()
+            time.sleep(4)
         error_box = self.driver.find_element_by_id('formControlMessage').get_attribute('value')
         self.assertIn ("Please input First name, Last name and Name abbreviation", error_box)
 
@@ -125,8 +138,12 @@ class UserValidation(unittest.TestCase):
             self.invalid_user4.lastname,
             self.invalid_user4.abbreviation)
         time.sleep(1)
-        self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
-        time.sleep(4)
+        try:
+            self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
+            time.sleep(4)
+        except:
+            self.driver.find_element_by_xpath('//*[@id="createUserTabs-pane-singleUser"]/form/div[8]/div/button').click()
+            time.sleep(4)
         error_box = self.driver.find_element_by_id('formControlMessage').get_attribute('value')
         self.assertIn ("Please input First name, Last name and Name abbreviation", error_box)
 
@@ -140,8 +157,12 @@ class UserValidation(unittest.TestCase):
             self.invalid_user5.lastname,
             self.invalid_user5.abbreviation)
         time.sleep(1)
-        self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
-        time.sleep(4)
+        try:
+            self.driver.find_element_by_xpath('/html/body/div[2]/div[2]/div/div/div[2]/div/form/div[9]/div/button[1]').click()
+            time.sleep(4)
+        except:
+            self.driver.find_element_by_xpath('//*[@id="createUserTabs-pane-singleUser"]/form/div[8]/div/button').click()
+            time.sleep(4)
         error_box = self.driver.find_element_by_id('formControlMessage').get_attribute('value')
         self.assertIn ("Name abbreviation has to be 2 to 3 characters long", error_box)
 

@@ -41,7 +41,6 @@ class MainFrameLocators(object):
     export_button_xpath = '//*[@id="app"]/div/div[1]/nav/div/ul/div[3]/div[1]/div[1]/ul/li[6]/a'
     export_checkbox_xpath = '/html/body/div[2]/div[2]/div/div/div[2]/div/div[2]/ul/li[1]/label'
     export_export_button_xpath = '//*[@id="md-export-dropdown"]/span'
-    my_data_button_id = "tree-id-My Data"
     sample_link_xpath = '//*[@id="tabList-pane-0"]/div/div[2]/table/tbody[1]/tr[2]/td[2]'
     analyses_tab_id = "SampleDetailsXTab-tab-analyses"
     qc_tab_id = "SampleDetailsXTab-tab-qc_curation"

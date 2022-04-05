@@ -1,4 +1,5 @@
 from selenium import webdriver
+from selenium.common.exceptions import NoSuchElementException
 import unittest
 import time
 import os
@@ -38,10 +39,17 @@ class LoginTest(unittest.TestCase):
     def test_0001_open_spectra_in_sample(self):
         home_page = MainFrame(self.driver)
         home_page.click_analyses_tab()
-        home_page.click_spectra_editor_button()
-        time.sleep(1)
-        home_page.click_spectra_close_button()
-        time.sleep(1)
+
+        spectra = self.driver.find_element_by_xpath('//*[@id="editable-analysis-list-heading-1980"]/div/div[2]/div[1]/button[2]')
+        if spectra.is_enabled():
+            home_page.click_spectra_editor_button()
+            time.sleep(1)
+            home_page.click_spectra_close_button()
+            time.sleep(1)
+
+    def test_open_spectra_tab_in_sample_activated(self):
+        # login as admin and then activate chemspectra for a user and then test it
+        pass
 
     def test_0002_qc_tab_in_sample(self):
         home_page = MainFrame(self.driver)

@@ -1,6 +1,4 @@
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
-
 import unittest
 import time
 import os
@@ -10,33 +8,32 @@ sys.path.append(file_path)
 
 from seleniumTests.POM.mainFrame import MainFrame
 from seleniumTests.POM.topFrame import TopFrame
+from seleniumTests.POM.adminPage import AdminPage
 
 class LoginTest(unittest.TestCase):
 
     URL = "http://localhost:4000/home"
 
-    @classmethod
-    def setUpClass(cls):
-        cls.driver = webdriver.Firefox()
-        cls.driver.implicitly_wait(10)
-        cls.driver.maximize_window()
-        cls.driver.get(cls.URL)
-        cls.driver.implicitly_wait(10)
-        top_frame = TopFrame(cls.driver)
-        top_frame.enter_username("test.user@provider.edu")
-        top_frame.enter_password("asdasdasd")
-        top_frame.click_login()
-
-    @classmethod
-    def setUp(cls):
-        home_page = MainFrame(cls.driver)
-        home_page.click_my_data_button()
-        home_page.click_sample_link()
+    def setUp(self):
+        self.driver = webdriver.Firefox()
+        self.driver.implicitly_wait(10)
+        self.driver.maximize_window()
+        self.driver.get(self.URL)
+        self.driver.implicitly_wait(5)
+        admin_page = AdminPage(self.driver)
+        admin_page.login_with("chemo_user_0001@chemotion.edu", "chemo_user_0001@chemotion.edu")
+        time.sleep(1)
+        home_page = MainFrame(self.driver)
+        try:
+            home_page.click_my_data_button('tree-id-My Data') # must be changed with existing sample data ID
+            home_page.click_sample_link()
+        except:
+            home_page.click_my_data_button('tree-id-qqqq')
+            home_page.click_sample_link()
 
     def test_0000_analyses_tab_in_sample(self):
         home_page = MainFrame(self.driver)
         home_page.click_analyses_tab()
-
 
     def test_0001_open_spectra_in_sample(self):
         home_page = MainFrame(self.driver)
@@ -50,12 +47,15 @@ class LoginTest(unittest.TestCase):
         home_page = MainFrame(self.driver)
         home_page.click_qc_tab()
 
+    '''
+    #deprecated
     def test_0003_literature_tab_in_sample(self):
         home_page = MainFrame(self.driver)
         try:
             home_page.click_literature_tab()
         except NoSuchElementException:
             home_page.click_references_tab()
+    '''
 
     def test_0004_results_tab_in_sample(self):
         home_page = MainFrame(self.driver)
@@ -92,18 +92,8 @@ class LoginTest(unittest.TestCase):
         assert boiling_temperature in home_page.get_boiling_temperature()
         assert melting_temperature in home_page.get_melting_temperature()
 
-    @classmethod
-    def tearDown(cls):
-        home_page = MainFrame(cls.driver)
-        home_page.click_sample_close_button()
-
-    @classmethod
-    def tearDownClass(cls):
-        time.sleep(2)
-        top_frame = TopFrame(cls.driver)
-        top_frame.click_logout()
-        cls.driver.close()
-        cls.driver.quit()
+    def tearDown(self):
+        self.driver.close()
 
 if __name__ == '__main__':
     LoginTest.URL = os.environ.get('URL', LoginTest.URL)

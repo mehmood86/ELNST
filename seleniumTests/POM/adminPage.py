@@ -20,6 +20,11 @@ class AdminPage():
         self.driver.find_element(By.XPATH, APL.password_field).send_keys(password)
         self.driver.find_element(By.XPATH, APL.login_btn).click()
 
+    def logout_then_login(self, email, password):
+        self.driver.find_element(By.XPATH, APL.login_field).send_keys(email)
+        self.driver.find_element(By.XPATH, APL.password_field).send_keys(password)
+        self.driver.find_element(By.XPATH, APL.logout_then_login).click()
+
     def click_user_management_link(self):
         self.driver.find_element(By.LINK_TEXT, APL.usermanagement_link_text).click()
 

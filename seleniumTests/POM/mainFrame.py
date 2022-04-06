@@ -9,7 +9,8 @@ class MainFrame():
         self.driver = driver
 
     def click_import(self):
-        self.driver.find_element(By.ID, MFL.export_dropdown_button_id).click()
+        elem = self.driver.find_element(By.ID, MFL.export_dropdown_button_id)
+        elem.click()
         self.driver.find_element(By.XPATH, MFL.import_button_xpath).click()
 
     def enter_path_import_file_select(self, path):
@@ -34,8 +35,8 @@ class MainFrame():
     def click_export_close(self):
         self.driver.find_element(By.CLASS_NAME, MFL.close_button_classname).click()
 
-    def click_my_data_button(self):
-        self.driver.find_element(By.ID, MFL.my_data_button_id).click()
+    def click_my_data_button(self, id):
+        self.driver.find_element(By.ID, id).click()
 
     def click_sample_link(self):
         self.driver.find_element(By.XPATH, MFL.sample_link_xpath).click()
@@ -160,8 +161,8 @@ class MainFrame():
         elem = self.driver.find_element(By.XPATH, MFL.close_dialog)
         elem.click()
 
-    def get_demo_data(self):
-        elem = self.driver.find_element(By.LINK_TEXT, 'demo')
+    def get_demo_data(self, element):
+        elem = self.driver.find_element(By.LINK_TEXT, element)
         elem.click()
 
     def update_demo_data(self, name, instrument, description):

@@ -1,5 +1,4 @@
 from selenium import webdriver
-from selenium.common.exceptions import NoSuchElementException
 import unittest
 import time
 import os
@@ -8,7 +7,6 @@ file_path = os.path.abspath(os.path.join(os.path.dirname(__file__),'../..'))
 sys.path.append(file_path)
 
 from seleniumTests.POM.mainFrame import MainFrame
-from seleniumTests.POM.topFrame import TopFrame
 from seleniumTests.POM.adminPage import AdminPage
 
 class LoginTest(unittest.TestCase):
@@ -39,13 +37,14 @@ class LoginTest(unittest.TestCase):
     def test_0001_open_spectra_in_sample(self):
         home_page = MainFrame(self.driver)
         home_page.click_analyses_tab()
-
-        spectra = self.driver.find_element_by_xpath('//*[@id="editable-analysis-list-heading-1980"]/div/div[2]/div[1]/button[2]')
+        spectra = self.driver.find_element_by_xpath('//*[@id="editable-analysis-list-heading-1982"]/div/div[2]/div[1]/button[2]')
         if spectra.is_enabled():
             home_page.click_spectra_editor_button()
             time.sleep(1)
             home_page.click_spectra_close_button()
             time.sleep(1)
+        else:
+            self.assertTrue("False", spectra.is_enabled())
 
     def test_open_spectra_tab_in_sample_activated(self):
         # login as admin and then activate chemspectra for a user and then test it

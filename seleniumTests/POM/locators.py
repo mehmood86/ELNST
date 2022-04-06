@@ -22,6 +22,7 @@ class AdminPageLocators(object):
     login_field = '//*[@id="user_login"]'
     password_field = '//*[@id="user_password"]'
     login_btn = '//*[@id="new_user"]/button'
+    logout_then_login = '//*[@id="new_user"]/div[4]/input'
 
 class LoginPageLocators(object):
     sign_up_link_text = "Sign up"

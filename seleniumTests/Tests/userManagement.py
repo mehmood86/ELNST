@@ -112,7 +112,7 @@ class LoginTest(unittest.TestCase):
         self.assertIn ("Chemotion", self.driver.title)
         time.sleep(2)
 
-    msg='Row 1: Failed to create user; Validation failed: Email has already been taken, Name abbreviation is already in use..'
+    #msg='Row 1: Failed to create user; Validation failed: Email has already been taken, Name abbreviation is already in use..'
 
     def tearDown(self):
         self.driver.close()

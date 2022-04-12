@@ -1,3 +1,4 @@
+from turtle import home
 from selenium import webdriver
 import unittest
 import time
@@ -98,6 +99,27 @@ class LoginTest(unittest.TestCase):
         home_page.click_sample_link()
         assert boiling_temperature in home_page.get_boiling_temperature()
         assert melting_temperature in home_page.get_melting_temperature()
+
+    def test_create_sample_with_smile(self):
+        time.sleep(5)
+        home_page = MainFrame(self.driver)
+        home_page.click_create_sample_btn()
+        time.sleep(1)
+        try:
+            home_page.click_chemical_identifiers()
+            time.sleep(2)
+            smile_input = self.driver.find_element_by_id("smilesInput")
+            smile_input.send_keys('c1cc(cc(c1)c1ccccc1)c1ccccc1')
+            time.sleep(2)
+            create_sample_btn = self.driver.find_element_by_id("smile-create-molecule")
+            create_sample_btn.click()
+            time.sleep(2)
+            home_page.click_create_molecule_btn()
+            time.sleep(2)
+            sample = self.driver.find_element_by_xpath('//*[@id="elements-tabs-pane-0"]/div/div[2]/div[1]/div[1]/h5[1]/span').text
+            self.assertIn('230.303760 g/mol', sample)
+        except:
+            assert False
 
     def tearDown(self):
         self.driver.close()

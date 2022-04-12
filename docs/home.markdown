@@ -41,6 +41,16 @@ permalink: /home/
 |12 |Forgot password after invalid user|Check if it redirects to ‘chemotion home page’ properly when ‘forgot password’ is clicked and then sign up link and then finally back link is clicked |
 |13 |Invalid email after forgot password after invalid user |Check if it redirects to ‘chemotion home page’ properly when after an invalid login attempt, ‘forgot password link’ is clicked and wrong email address is inserted. Finally it should return ‘Email not found’ as error message and when sign up link is clicked and then back, it should again redirect to home page|
 
+<h2>Sample Properties</h2>
+
+|# |name |description |
+|:-----|:----|:------------|
+|1 |Stereo abs value |Check if switching between ‘stereo Abs’ drrop down list items saves correctly and reflected aside chemical name (upper left) on the display|
+|2 |Stereo rel value |Check if switching between ‘stereo Rel’ drrop down list items saves correctly and reflected aside chemical name (upper left) on the display|
+|3 |Density |Check if changing density correctly saves when save button is clicked|
+|4 |dataset upload |Check if a file (for instance demo.svg) properly uploaded in the Datasets of analysis section|
+|5 |update |Check if updating details (such as name) of sample Datasets persists new changes properly|
+
 <h2>Sample Interaction</h2>
 
 |# |name |description |
@@ -54,6 +64,7 @@ permalink: /home/
 |7 |Edit molecule |Check if ‘molecule edit’ button is loading editor properly and closes with close button|
 |8 |Enter name |Check if naming a sample ([custom_name + timestamp]) is working properly|
 |9 |Enter Temperature |Check if inserting boiling temperature as well as melting temperature in sample properties tab functions properly|
+|10 |create sample with smile |Check if molecule can be created with smile (for example: 'c1cc(cc(c1)c1ccccc1)c1ccccc1') |
 
 <h2>Collection Interaction</h2>
 
@@ -63,13 +74,3 @@ permalink: /home/
 |2 |File select |Check if the ‘import collections’ properly loading a sample collection from a folder|
 |3 |Export dialog |Check if ‘export collections’ opens and close the popup window properly|
 |4 |Export collection |Check if the ‘export collections’ properly exporting a sample collection|
-
-<h2>Sample Properties</h2>
-
-|# |name |description |
-|:-----|:----|:------------|
-|1 |Stereo abs value |Check if switching between ‘stereo Abs’ drrop down list items saves correctly and reflected aside chemical name (upper left) on the display|
-|2 |Stereo rel value |Check if switching between ‘stereo Rel’ drrop down list items saves correctly and reflected aside chemical name (upper left) on the display|
-|3 |Density |Check if changing density correctly saves when save button is clicked|
-|4 |dataset upload |Check if a file (for instance demo.svg) properly uploaded in the Datasets of analysis section|
-|5 |update |Check if updating details (such as name) of sample Datasets persists new changes properly|

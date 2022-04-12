@@ -74,6 +74,9 @@ class MainFrameLocators(object):
     upload_btn = '/html/body/div/div[2]/div/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div/div/div[2]/div[2]/div/div/div[2]/span/div/div[1]/div/div/div[2]/div/div/div[5]/div/div/div/button'
     file_input = '/html/body/div[2]/div[2]/div/div/div[2]/div/div[2]/div[1]/input'
     close_dialog = '/html/body/div[2]/div[2]/div/div/div[1]/h4/div/button'
+    create_sample_btn = '//*[@id="app"]/div/div[1]/nav/div/ul/div[3]/div[2]/div/div/button[1]/div/i[1]'
+    identifiers_tab = '//*[@id="SampleDetailsXTab-pane-properties"]/div/button'
+    create_molecule_btn = '/html/body/div/div[2]/div/div[2]/div[2]/div/div[2]/div/div/div/div/div/div/div/div/div[1]/div/button[1]'
 
 class PasswordNewPageLocators(object):
     log_in_link_text = "Log in"

@@ -177,3 +177,15 @@ class MainFrame():
 
     def get_element(self, element):
         return self.driver.find_element(By.LINK_TEXT, element)
+
+    def click_create_sample_btn(self):
+        elem = self.driver.find_element(By.XPATH, MFL.create_sample_btn)
+        elem.click()
+
+    def click_chemical_identifiers(self):
+        elem = self.driver.find_element(By.XPATH, MFL.identifiers_tab)
+        elem.click()
+
+    def click_create_molecule_btn(self):
+        elem = self.driver.find_element(By.XPATH, MFL.create_molecule_btn)
+        elem.click()
